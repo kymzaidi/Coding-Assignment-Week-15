@@ -24,8 +24,6 @@ public class Employee {
 	
 	private Long employeeId;
 	
-	private Long petStoreId;
-	
 	private String employeeFirstName;
 	
 	private String employeePhone;
@@ -36,6 +34,6 @@ public class Employee {
 	@ToString.Exclude
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "pet_store_id")
-	Set<PetStore> petStore = new HashSet<>();
+	private PetStore petStore;
 
 }
