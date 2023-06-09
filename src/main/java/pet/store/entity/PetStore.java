@@ -26,7 +26,7 @@ public class PetStore {
 	
 	private Long petStoreId;
 	
-	private Long petStoreName;
+	private String petStoreName;
 	
 	private String petStoreAddress;
 	
