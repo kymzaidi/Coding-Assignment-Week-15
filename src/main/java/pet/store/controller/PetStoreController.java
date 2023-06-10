@@ -31,7 +31,7 @@ public class PetStoreController {
 		return petStoreService.savePetStore(petStoreData);		
 	}
 	
-	@PutMapping("/pet_store/{petStoreID}")
+	@PutMapping("/pet_store/{petStoreId}")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public PetStoreData  modifyPetStoreData(@PathVariable Long petStoreId,
 			@RequestBody PetStoreData petStoreData) {

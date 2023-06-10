@@ -22,9 +22,11 @@ public class PetStoreService {
 
 	public PetStoreData savePetStore(PetStoreData petStoreData) {
 		
+		
 		Long petStoreId = petStoreData.getPetStoreId();
 		PetStore petStore = findOrCreatePetStore(petStoreId);
-		return new PetStoreData(petStoreDao.save(petStore));		
+		setFieldsInPetStore(petStore, petStoreData);
+		return new PetStoreData(petStoreDao.save(petStore));
 		
 	}
 	
@@ -48,4 +50,13 @@ public class PetStoreService {
 				.orElseThrow(() -> new NoSuchElementException(
 						"Pet store with ID " + petStoreId + " not found."));
 	}
+	
+	private void setFieldsInPetStore(PetStore petStore, PetStoreData petStoreData) {
+		petStore.setPetStoreName(petStoreData.getPetStoreName());
+		petStore.setPetStoreAddress(petStoreData.getPetStoreAddress());
+		petStore.setPetStoreCity(petStoreData.getPetStoreCity());
+		petStore.setPetStoreState(petStoreData.getPetStoreState());
+		petStore.setPetStoreZip(petStoreData.getPetStoreZip());
+		petStore.setPetStorePhoneNumber(petStoreData.getPetStorePhoneNumber());
+    }
 }	
