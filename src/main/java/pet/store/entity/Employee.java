@@ -23,6 +23,8 @@ public class Employee {
 	
 	private String employeeFirstName;
 	
+	private String employeeLastName;
+	
 	private String employeePhone;
 	
 	private String employeeJobTitle;
